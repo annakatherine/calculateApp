@@ -1,10 +1,7 @@
 console.log( ' hello from js ' );
 $(document).ready(function(){
-
   console.log( 'hello from jquery ');
-
 });
-
 
 var x = '';
 x.className = 'x';
@@ -21,12 +18,6 @@ y: '',
 type: '' };
 
 console.log(input);
-
-$('#Booyah').on('click', function(){
-
-console.log( 'Booyah button clicked' );
-
-});
 
 $('#one').on('click', function(){
 
@@ -324,21 +315,25 @@ console.log(type);
 $('#Submit').on('click', function(){
 
 console.log( 'Submit button clicked' );
+
 startServerSide();
 
 });
 
-function startServerSide(){
+var startServerSide = function(){
   console.log( 'in startServerSide function ');
   $.ajax({
     type: "POST",
-    data: input,
-    url: 'https://modules/calculate',
+    // data: input,
+    url: 'http://localhost:3000/calculate',
     success: function( data ) {
+      
         console.log( 'hello from ajax');
+
         // function to process response
+
     }, error: function(){
       alert( 'Error accessing' );
     }
   });
-}
+};

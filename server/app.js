@@ -4,6 +4,7 @@ var bodyParser=require('body-parser');
 var urlencodedParser = bodyParser.urlencoded( { extended: false } );
 
 var app = express();
+
 var calculate = require('../modules/calculate');
 
 var server = app.listen( 3000, 'localhost', function(){
@@ -17,17 +18,15 @@ app.use(function(req, res, next) {
 });
 
 app.get( '/', function( req, res ){
-res.write( 'hello from base url' );
-res.sendFile( path.resolve( '/index.html' ));
-res.end();
-
+res.sendFile( path.resolve( 'views/index.html' ));
 });
 
-app.post( '../modules/calculate', urlencodedParser, function( req, res){
-var calculate = calculate(req.body.calculate);
+app.post( '/calculate', urlencodedParser, function( req, res){
+  console.log( 'work porfis!' );
+// var calculate = calculate(req.body.calculate);
 res.write( "it's pinging from the calculator" ) ;
 res.end();
-
 });
+
 //makes
 app.use( express.static( 'public' ) );
