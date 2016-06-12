@@ -25,6 +25,7 @@ console.log( 'one button clicked ');
 
 if ( input.x === '' ){
   input.x = 1;
+  console.log(input);
 }
 
 else if ( input.type === '' ){
@@ -34,6 +35,7 @@ else if ( input.type === '' ){
 
 else if ( input.y === '' ){
   input.y = 1;
+  console.log(input);
 }
 
 else {
@@ -52,6 +54,8 @@ console.log( 'two button clicked' );
 
 if ( input.x === '' ){
   input.x = 2;
+  console.log(input);
+
 }
 else if ( input.type === '' ){
   alert('method needed');
@@ -60,6 +64,8 @@ else if ( input.type === '' ){
 
 else if ( input.y === '' ){
   input.y = 2;
+  console.log(input);
+
 }
 
 else {
@@ -74,6 +80,8 @@ console.log( 'three button clicked' );
 
 if ( input.x === '' ){
   input.x = 3;
+  console.log(input);
+
 }
 
 else if ( input.type === '' ){
@@ -83,6 +91,7 @@ else if ( input.type === '' ){
 
 else if ( input.y === '' ){
   input.y = 3;
+  console.log(input);
 }
 
 else {
@@ -97,6 +106,7 @@ console.log( 'four button clicked' );
 
 if ( input.x === '' ){
   input.x = 4;
+  console.log(input);
 }
 
 else if ( input.type === '' ){
@@ -106,6 +116,7 @@ else if ( input.type === '' ){
 
 else if ( input.y === '' ){
   input.y = 4;
+  console.log(input);
 }
 
 else {
@@ -120,6 +131,9 @@ $('#five').on('click', function(){
 console.log( 'five button clicked' );
 if ( input.x === '' ){
   input.x = 5;
+  console.log(input);
+  return;
+
 }
 else if ( input.type === '' ){
   alert('method needed');
@@ -128,6 +142,8 @@ else if ( input.type === '' ){
 
 else if ( input.y === '' ){
   input.y = 5;
+  console.log(input);
+  return;
 }
 
 else {
@@ -315,25 +331,29 @@ console.log(type);
 $('#Submit').on('click', function(){
 
 console.log( 'Submit button clicked' );
-
 startServerSide();
 
 });
 
+var processInput = function( data ){
+
+console.log( 'in process input function' );
+// calculate( input );
+console.log(input);
+
+};
 var startServerSide = function(){
   console.log( 'in startServerSide function ');
   $.ajax({
-    type: "POST",
+    method: "POST",
     // data: input,
     url: 'http://localhost:3000/calculate',
+    // dataType: 'json',
     success: function( data ) {
-      
-        console.log( 'hello from ajax');
-
-        // function to process response
-
+        console.log( 'WORK PLEASE' );
     }, error: function(){
       alert( 'Error accessing' );
     }
   });
 };
+startServerSide();

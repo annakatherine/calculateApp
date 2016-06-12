@@ -22,10 +22,9 @@ res.sendFile( path.resolve( 'views/index.html' ));
 });
 
 app.post( '/calculate', urlencodedParser, function( req, res){
-  console.log( 'work porfis!' );
-// var calculate = calculate(req.body.calculate);
-res.write( "it's pinging from the calculator" ) ;
-res.end();
+console.log( 'from inside app.post ');
+var fromModule = calculate(req.body);
+// res.send( data );
 });
 
 //makes
