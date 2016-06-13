@@ -1,4 +1,5 @@
 console.log( ' hello from js ' );
+
 $(document).ready(function(){
   console.log( 'hello from jquery ');
 });
@@ -329,31 +330,21 @@ console.log(type);
 });
 
 $('#Submit').on('click', function(){
-
 console.log( 'Submit button clicked' );
 startServerSide();
-
 });
 
-var processInput = function( data ){
-
-console.log( 'in process input function' );
-// calculate( input );
-console.log(input);
-
-};
-var startServerSide = function(){
+var startServerSide = function(input){
   console.log( 'in startServerSide function ');
   $.ajax({
-    method: "POST",
-    // data: input,
-    url: 'http://localhost:3000/calculate',
-    // dataType: 'json',
+    type: "POST",
+    url: '/calculate',
+    data: input,
     success: function( data ) {
         console.log( 'WORK PLEASE' );
+        // calculate();
     }, error: function(){
       alert( 'Error accessing' );
     }
   });
 };
-startServerSide();

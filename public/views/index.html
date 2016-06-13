@@ -3,12 +3,13 @@
   <head>
     <meta charset="utf-8">
     <title>Calculator App </title>
-    <link rel="stylesheet" href="vendors/bootstrap.min.css" media="screen" title="no title" charset="utf-8">
+    <!-- <link rel="stylesheet" href="/public/vendors/bootstrap.min.css" media="screen" title="no title" charset="utf-8"> -->
     <!-- <link rel="stylesheet" href="views/stylesheet.css" media="screen" title="no title" charset="utf-8"> -->
   </head>
 <body>
 <h1> Calculator App </h1>
-<form class="" action="http://localhost:3000/calculate" method="post">
+<form class="" name = 'form' method="post">
+  <!-- action="http://localhost:3000/calculate" -->
     <div class="container">
       <div class="row">
       <div class ="col-sm-3">
@@ -67,9 +68,12 @@
       <!-- result goes here! -->
     </div>
     </div> <!--end of row 4 -->
+    <div class="" name="inputObject"></div>
+
+    </div>
     </div>
     </form>
-    <script src = "scripts/jquery3.js"></script>
+    <script src = "scripts/jquery.js"></script>
     <script src = "scripts/scripts.js"></script>
   </body>
 </html>
