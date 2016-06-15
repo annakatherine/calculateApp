@@ -1,30 +1,29 @@
 
-var calculate = function( checkInput ){
-  console.log( 'hello from calculate' );
-  console.log( ' from module, checkInput.x: ' + checkInput.x );
-  // console.log(input);
-//
-// if( type === 'plus' ){
-//
-//   output = x + y;
-//   console.log( 'from plus if, output = '+ output);
-//
-// } else if ( type === 'minus' ){
-//
-//   output = x - y;
-//   console.log( 'from minus if, output = '+ output);
-//
-// } else if ( type === 'times' ) {
-//
-//   output = x * y;
-//   console.log( 'from times if, output = ' + output);
-//
-// } else if ( type === 'divide' ){
-//
-//   output = x / y;
-//   console.log( 'from divide if, output = ' + output);
-//
-// }
+var calcFunction = function( checkInput ){
+  console.log( 'hello from calcFunction: ' + checkInput.x);
+var output = '';
+if( checkInput.type === 'plus' ){
+
+  output = Number(checkInput.x) + Number(checkInput.y);
+  console.log( 'from plus if, output = '+ output);
+
+} else if ( checkInput.type === 'minus' ){
+
+  output = checkInput.x - checkInput.y;
+  console.log( 'from minus if, output = '+ output);
+
+} else if ( checkInput.type === 'times' ) {
+
+  output = checkInput.x * checkInput.y;
+  console.log( 'from times if, output = ' + output);
+
+} else if ( checkInput.type === 'divide' ){
+
+  output = checkInput.x / checkInput.y;
+  console.log( 'from divide if, output = ' + output);
+
+}
+return output;
 };
 
-module.exports = calculate;
+module.exports = calcFunction;
