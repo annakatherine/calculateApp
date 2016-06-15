@@ -235,17 +235,20 @@ var startServerSide = function( inputToSend ){
 var spitOutAnswer = function( data ){
   console.log( 'in spitOutAnswer, data: ' + data);
   var answer = document.createElement( 'p' );
+  answer.className = 'answer';
    answer.textContent = "The answer is " + data;
    document.getElementById('result').innerHTML = '';
     //  document.getElementById(    )
    $('#result').append( answer );
 };
-
 $('#clear').on( 'click', function(){
-  $('#result').empty();
-  $( input.x ).empty();
-  console.log( input.x );
-  // $('#result').clear();
+  $('p').empty().val( '' );
+  $(input = {
+    x: '',
+    y: '',
+    type: ''
+  });
+  console.log( input );
 });
 //
 // function returnAnswer( output ) {
